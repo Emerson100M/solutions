@@ -1,0 +1,34 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 13pt;
+}
+
+body {
+  background-color: #e7e7e7;
+}
+.bg-primary-color {
+  background-color: #fff;
+}
+.bg-secondary-color {
+  background-color: #000;
+}
+.bg-terceary-color {
+  background-color: #e7e7e7;
+}
+.bg-dark-color {
+  background-color: #050505;
+}
+.primary-color {
+  color: #050505;
+}
+.secondary-color {
+  color: #fff;
+}
+.terceary-color {
+  color: #ffa600;
+}
+.direita{
+  text-align: right;
+}

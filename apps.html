@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ClickEnter | Telecom</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+  
+
+    <!--CSS do bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!--Javascript do bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        
+    <!--Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+      <!--CSS do projeto-->
+     
+      <link rel='stylesheet' type='text/css' media='screen' href='css/apps.css'>
+      <link rel='stylesheet' type='text/css' media='screen' href='css/menu.css'>
+      <link rel='stylesheet' type='text/css' media='screen' href='css/infofooter.css'>
+
+    <!-- GoogleFontes Montserrat-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+    
+    
+    <!--NAVBAR-->
+    <nav class="info bg-secondary-color">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-7 col-md-7 col-lg-7 col-xl-8">
+                    <div class="d-flex flex-column flex-md-row">                    
+                            <h6>&nbsp;&nbsp;&nbsp;<i class="bi bi-whatsapp"> 0800 092 1920 </i></h6>                   
+                            <h6>&nbsp;&nbsp;&nbsp;<i class="bi bi-envelope-arrow-up-fill"><a href="mailto:sac@clickenter.com.br?subject=Preciso de Suporte"> sac@clickenter.com.br</a></i></h6>                    
+                    </div>
+                </div>
+                 <!-- Ícones Sociais -->
+                 <div class="col-5 col-md-5 col-lg-5 col-xl-4 ">
+                    <div class="row direita">
+                        <div class="col-12 col-sm-12 col-md-9">
+                            <h6><a href="https://portal.clickenter.com.br" target="_blank"><i class="bi bi-person-circle"> Já sou cliente </i></a></h6>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-3 d-flex justify-content-end" id="social-icons1">
+                            <a href="https://play.google.com/store/apps/details?id=br.com.portal.clickenter" target="_blank" class="me-2"><i class="bi bi-google-play"></i></a>
+                            <a href="https://apps.apple.com/br/app/clickfacil/id6477883008" target="_blank"><i class="bi bi-apple"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+
+<!--   <nav class="navbar navbar-expand-lg fixed-top bg-primary-color" id="navbar">   para menu fixo-->
+    <nav class="navbar navbar-expand-lg bg-primary-color" id="navbar">    
+        
+        <div class="container py-1">
+            
+            <a href="#" class="navbar-brand">
+                <img src="img/logo.png" alt="ClickEnter">
+            </a>
+
+            <button class="navbar-toggler"
+            type="button" 
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-items"
+            aria-controls="navbar-items"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+            <i class="bi bi-list"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar-items">
+
+            <!--barra de navegação-->
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link primary-color">Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="empresa.html" class="nav-link primary-color">A empresa</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="apps.html" class="nav-link primary-color active"  area-current="page">Catálogo de apps</a>
+                    </li>
+
+                    
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle primary-color" id="servicosDropdown" role="button">
+                            Serviços
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicosDropdown">
+                            <li><a class="dropdown-item" href="dedicado.html">Link Dedicado</a></li>
+                            <li><a class="dropdown-item" href="fusao.html">Fibra ótica: Fusão</a></li>
+                            <li><a class="dropdown-item" href="vpn.html">VPN</a></li>
+                            <li><a class="dropdown-item" href="ponto.html">Ponto-a-Ponto</a></li>
+                            <li><a class="dropdown-item" href="temporario.html">Link temporário</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle primary-color" id="recursosDropdown" role="button">
+                            Recursos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="recursosDropdown">
+                            <li><a class="dropdown-item" href="https://portal.clickenter.com.br" target="_blank">Central do Assinante</a></li>
+                            <li><a class="dropdown-item" href="https://clickenter.speedtestcustom.com/" target="_blank">Teste de Velocidade</a></li>
+                            <li><a class="dropdown-item" href="http://clickenter.com.br/contratos/loca-equipamentos.pdf" target="_blank">Contrato de Locação</a></li>
+                            <li><a class="dropdown-item" href="http://clickenter.com.br/contratos/scm.pdf" target="_blank">Contrato SCM</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://linktr.ee/click_enter" class="nav-link primary-color">LINKS ÚTEIS</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </div>
+
+
+        
+
+
+    <!--APPS-->
+    <div class="container" id="boas-vindas">
+        
+        <div class="row">
+            <div class="col-3 col-md-1">
+                <img src="img/avatar.jpg" alt="" class="avatar">
+            </div>
+            <div class="col-9 col-md-8">
+                <h2>Olá assinante CLICK ENTER</h2>
+                <p>Para usar nossos apps o 1° passo é acessar o link abaixo e selecione quais deseja utilizar:</p>
+            </div>
+        </div>
+        
+        <br>
+
+        <a href="https://www.portaldoassinante.com/click" class="" target="_blank">
+            <div class="row bg-gradiente">
+                <div class="col-3 col-md-1">
+                    <img src="img/logo.svg" alt="" class="hub">
+                </div>
+                <div class="col-9 col-md-8">
+                    <h2 class="link-hub">Portal de APPs</h2>
+                </div>
+            </div>
+        </a>
+        
+    </div>
+
+
+    <div class="container decidido">
+        <h2>Já escolheu quais apps irá usar?</h2>
+        <p class="primary-color"> Neste caso basta acessar os links abaixo para ativá-los:</p>
+    </div>
+
+
+
+    <div class="apps">
+        <div class="container" id="container-apps">
+            <br>
+            <br>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://www.playhub.com.br/api/hbomax/account/login?ReturnUrl=%2fapi%2fhbomax%2fconnect%2fauthorize%3fresponse_type%3dcode%26scope%3dopenid%26client_id%3dDC78158A-89E3-4A8B-8066-459371C95107%26state%3deyJtdnBkSWQiOiJwbGF5aHViX2JyIiwicmVsYXlTdGF0ZSI6Imh0dHBzOi8vZGVmYXVsdC5hbnktbGF0YW0ucHJkLmFwaS5kaXNjb21heC5jb20vbGV4aWNvbi1hdXRoZW50aWNhdGlvbi1jaGFubmVsL2xleC1hdXRobi1wYXNlby9wdWJsaWMvdjEvcGFzZW8vcGxheWh1Yl9ici9sb2dpbj9wYXJ0bmVyUGF5bG9hZD1leUp6ZEdGMFpTSTZJbHBIVmpKaFYwNXNXRE5PYkdOdGJHaGlSamwxWkZjeGFWcFlTVGxQVkU1c1RVUlZORTFVVlhST2VtTTBXa013TUZwVVl6Qk1WR2Q0VGpKVmRFOUVRbWxPVkdzeFRsZEdhVTV0VG1wS2JrSnpXVmhTYldJelNuUlFXR1JzV1dsYWVWcFhXVGxaTWtwcFQwZE5OVnBFWjNSTmJWSnFUbWt3TUZwdFJURk1WR3Q2V21wcmRGbFVVWGxQVkZadFdsZE5NRTlYU1hwS2JrNXNZa2RXYW1SSFZtdFlNazUyWkZjMU1HTnVhemxSYkVsdFpGaE9iR05zT1doYU1sWjFaRVF4VG1JemNIQmlSM2hvU2xSS1IwNVROSGRMZVZWNVQwWm5lRTFUVlhwUmFYUk5ZVmMxTVdWRGREUlBSRnBtVG1wUmJFMXFhM0pSV0VKM1lrZFdXRnBYU2t4aFdGRnNUV3RaTVUxNlkzVk5lbGx5U2xSSk5GTXdhRlZVVlhkc1RXdE5jbUpIYkhKYVUzUklXbGRPY21KNVZYbFBVM1JFWVVoS2RtSlhWV3hOYTFsNFRXcFJkVTFETkhkTWFrRnlWVEpHYlZsWVNuQktWRXBIVGxSTk0weHFUVElpTENKeVpXUnBjbVZqZEY5MWNta2lPaUpvZEhSd2N6b3ZMMlJsWm1GMWJIUXVZVzU1TFd4aGRHRnRMbkJ5WkM1aGNHa3ViV0Y0TFc1bGVIUXVZMjl0TDJkaGRYUm9MMkp5YjJ0bGNpOWpZV3hzWW1GamF5SjlDZz09JmF1dGhlbnRpY2F0b3JDb2RlPXBsYXlodWJfYnImZGV2aWNlU2VyaWFsTnVtYmVyPTkzZTA1ODE1LTc3OGQtNGU3NC04MTdlLTgwYjU5NTVhYjZjYyZjaGFubmVsTmFtZT1oYm9tYXgmbXZwZElkPXBsYXlodWJfYnIiLCJwYXJ0bmVyUGF5bG9hZCI6bnVsbH0%253D%26redirect_uri%3dhttps%253A%252F%252Fpaseoauthnsp.hbopaseo.com%252Fhbola-sp%252FaccessTokenRetrieval&ispCode=000" target="_blank">
+                        <img src="img/PREMIUM/8.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://www.ritual.fit/pt_BR/checkout" target="_blank">
+                        <img src="img/PREMIUM/7.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://play.queimadiaria.com/redeem/playhub"target="_blank">
+                        <img src="img/PREMIUM/5.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>               
+            </div> 
+            
+            <div class="row justify-content-center">                
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://www.looke.com.br/landingpage" target="_blank">
+                        <img src="img/STANDARD/19.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://app.playkids.com/parcerias/playhub" target="_blank">
+                        <img src="img/STANDARD/15.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>                
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://www.playhub.com.br/api/socialcomics/account/login?ReturnUrl=%2fapi%2fsocialcomics%2fauthorize%3fclient_id%3d02D65A06-CB27-4D5E-B95B-ECA7A87AEE7D%26client_secret%3dbnnQHujmgMmgLMmcLgbCCO4ctXY8VctS33lHW8niQG2tqucOrNfGtHvbVXKEP8nBykBSdAJQIdAgciqNLwRMr7v4hC1AIfcRCrxy%26resource_id%3dSocialComics001%26isp_id%3d000%26response_type%3dcode%26state%3d123456%26redirect_uri%3dhttps%253A%252F%252Fsocialcomics.com.br%252Fsva%252Fcallback&isp_id=000" target="_blank">
+                        <img src="img/STANDARD/11.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://www.playhub.com.br/API/CurtaOn/account/login?ReturnUrl=%2fAPI%2fCurtaOn%2fauthorize%3fisp_id%3d000%26response_type%3dcode%26client_id%3d6370A0D1-F9FA-49C9-931F-2CF1195F4DD8%26state%3d1234%26redirect_uri%3dhttps%253A%252F%252Fcurtaon.com.br%252Fauth%252Fparceiro%252Fcallback&isp_id=000" target="_blank">
+                        <img src="img/STANDARD/18.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">  
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://plus.ubook.com/activate" target="_blank">
+                        <img src="img/STANDARD/10.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://plus.ubook.com/activate" target="_blank">
+                        <img src="img/STANDARD/8.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>                           
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://www.estudamaisapp.com.br/activate" target="_blank">
+                        <img src="img/STANDARD/23.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://my.kaspersky.com/pt-BR#/welcome" target="_blank">
+                        <img src="img/STANDARD/6.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>
+            </div>   
+
+            <div class="row justify-content-center">    
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://play.queimadiaria.com/redeem/playhub"target="_blank">
+                        <img src="img/STANDARD/5.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://www.ojornalistaapp.com.br/activate" target="_blank">
+                        <img src="img/STANDARD/3.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://my.kaspersky.com/pt-BR#/auth/layout/main" target="_blank">
+                        <img src="img/PREMIUM/4.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://www.pequenosleitoresapp.com.br/activate" target="_blank">
+                        <img src="img/STANDARD/25.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>
+            </div>   
+            
+
+            <div class="row justify-content-center">    
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://www.playlistapp.com.br/activate"target="_blank">
+                        <img src="img/STANDARD/20.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>
+                <div class="col-12 col-md-2 d-flex justify-content-center">
+                    <a href="https://activate.noping.com/" target="_blank">
+                        <img src="img/STANDARD/21.png" alt="Imagem 1" class="img-apps">
+                    </a>
+                </div>
+               
+            </div>   
+            <br>
+            <br>
+
+           
+        </div>
+    </div>
+                       
+                            
+
+
+
+
+
+<!--INFO2-->
+
+<div class="container-fluid" id="info-container2">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-3 position-relative ocultar">
+                <div class="img-container">
+                    <img src="img/02.png" alt="Sobre a empresa" class="celular img-fluid position-absolute bottom-0 start-50 translate-middle-x">
+                </div>
+            </div>
+            <div class="col-12 col-md-9 bg-terceary-color" id="info-content2">
+                <div class="row cor1">
+                    <div class="col-12">                        
+                        <h5 class="mb-3">ACOMPANHE NOSSO CONTEÚDO OFICIAL EM NOSSOS CANAIS DE COMUNICAÇÃO:</h5>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/click_enter/" target="_blank"><i class="bi bi-instagram"></i>Instagram</a>
+                            <a href="https://www.facebook.com/clickenter.net/" target="_blank"><i class="bi bi-facebook"></i>Facebook</a>
+                            <a href="https://api.whatsapp.com/send?phone=558000921920&text=Ol%C3%A1%2C%20gostaria%20de%20contratar." target="_blank"><i class="bi bi-whatsapp"></i>WhatsApp</a>                            
+                        </div>
+                    </div>                   
+                </div>
+                <div class="row cor2">
+                    <div class="col-12">
+                        <p class="primary-color text-justify">O aplicativo da ClickFacil foi feito especialmente para os nossos clientes, com ele você tem mais agilidade e praticidade no dia a dia.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-11">
+                        <a href="https://play.google.com/store/apps/details?id=br.com.portal.clickenter" target="_blank"><img src="img/7.png" alt="ClickFacil" class="img-fluid"></a>
+                        <a href="https://apps.apple.com/br/app/clickfacil/id6477883008" target="_blank"><img src="img/8.png" alt="ClickFacil" class="img-fluid"></a>                               
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+
+
+   <!--FOOTER-->
+ 
+   <footer class="container-fluid bg-dark-color" id="footer">
+    <div class="container">
+        <div class="row">
+
+                <!--FOOTER TOP-->
+
+              
+                <!--FOOTER DETAILS-->
+                <div class="col-12" id="footer-details">
+                    <div class="row">
+                        <div class="col-12 col-lg-5" id="news-container">
+                         
+                            <h4>Fique por dentro das novidades</h4>
+                           
+                            <p class="text-justify">Sejam bem-vindos ao novo site da CLICK ENTER. Um site mais moderno e dinâmico, onde você, nosso fiel cliente pode ver nossos planos de acesso, 
+                                acessar sua central do assinante ou entrar em contato com nossa equipe para você tirar suas dúvidas ou enviar críticas e sugestões. Aproveite, 
+                                ele foi feito pensando em você! Equipe CLICK ENTER!</p>                        
+                        </div>
+
+                        <div class="col-12 col-lg-3" id="contact-container">
+                         
+                            <h4>Formas de contato</h4>
+                           
+                            <p>0800 092 1920</p>  
+                            <p>sac@clickenter.com.br</p>                              
+                            
+                        </div>
+
+                        <div class="col-12 col-lg-4" id="links-container">
+                            <div class="row">
+                                <h4 class="secondary-color">Você pode estar procurando por:</h4>
+                                <div class="col-6">
+                                    <ul class="list-unstyled">
+                                        <li><a href="index.html" >Início</a></li>
+                                        <li><a href="empresa.html" >A empresa</a></li>
+                                        <li><a href="dedicado.html">Link Dedicado</a></li>
+                                        <li><a href="vpn.html">VPN</a></li>                                       
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="list-unstyled">
+                                        <li><a href="ponto.html">Ponto-a-Ponto</a></li>
+                                        <li><a href="https://portal.clickenter.com.br" target="_blank">Central do assinante</a></li>
+                                        <li><a href="https://clickenter.speedtestcustom.com" target="_blank">Teste de velocidade</a></li>
+                                        <li><a href="http://clickenter.com.br/contratos/scm.pdf" target="_blank">Contrato SCM</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            
+
+            <!--FOOTER BOTTOM-->
+            <div class="col-12" id="footer-bottom">
+                <div class="row justify-content-between">
+                    <div class="col-12 col-md 9">
+                        <p class="secondary-color">ClickEnter &copy; 2024</p>
+                    </div>
+                    <div class="col-12 col-md 3 text-right">
+                        <p class="secondary-color">Desenvolvido por: Emerson Soares</p>
+                        <p class="secondary-color">escdev2@gmail.com</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    </footer>
+    <script src="https://5chat.5hub.com.br/v2/static/embed-5hub.js"
+        data-subdomain="clickenter"
+        data-activation-key="clickent.6398673d860908.07623245">
+    </script>
+
+
+</body>
+
+</html>
