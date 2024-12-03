@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ativando ONU no UNM</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="autorizando-onu-no-unm">Autorizando ONU no UNM</h1>
+<h3 id="onu-fiberhome">1 -  ONU FIBERHOME</h3>
+<hr>
+<h3 id="identificando-e-registrando-a-onu">Identificando e registrando a ONU</h3>
+<p>01	seleciona a OLT<br>
+02	obtain unautorized ONU —&gt; all<br>
+03	add to the ONU Authority List<br>
+04	As “physical ID”<br>
+05	current Row —&gt; create on device<br>
+06	current Row —&gt; Save to database<br>
+07	procura o serial da ONU autorizada<br>
+08	seleciona a ONU —&gt; Service config</p>
+<h3 id="onu-em-modo-route-">::: ONU em modo ROUTE :::</h3>
+<p>09	Wan service —&gt; add —&gt; 1<br>
+10	Wan mode —&gt; internet<br>
+11	Wan connection —&gt; route<br>
+12	Vlan —&gt; adiciona  a VLAN do local<br>
+13	Vlan cos —&gt; 4<br>
+14	Nat —&gt; enable<br>
+15	Wan dsp —&gt; PPPOE<br>
+16	Wan IP —&gt; IPV4 e IPV6<br>
+17	IPV6 —&gt; DHCPV6<br>
+18	WAN —&gt; username e password (PPPOE do cliente)<br>
+19 habilitar as checkbox conforme o modelo da ONU</p>
+<ul>
+<li>modelo 02F (AN5506-02-F) —&gt; (LAN_1-2)     + (2.4G_SSID_1)</li>
+<li>modelo 04F (AN5506-04-F) —&gt; (LAN_1-2-3-4) + (2.4G_SSID_1)</li>
+<li>modelo HG e AX (HG6145F) —&gt; (LAN_1-2-3-4) + (10G_LAN) + (2.4G_SSID_1) + (5G_SSID_1)</li>
+</ul>
+<p>20	create on device<br>
+21	save to database</p>
+<h3 id="onu-em-modo-bridge-">::: ONU em modo BRIDGE :::</h3>
+<p>09	Port service config —&gt; data port —&gt; LAN1<br>
+10	Service configuration —&gt; ADD ou MODIFY<br>
+11	CVLAN ID ( adiciona  a VLAN do local)<br>
+12	CVLAN MODE —&gt; TAG<br>
+13	Vlan cos —&gt; 4<br>
+14	OK<br>
+15	create on device<br>
+16	save to database</p>
+<hr>
+<h3 id="observações-e-outros-recursos-do-unm">Observações e outros recursos do UNM</h3>
+<hr>
+<ul>
+<li>Para capitão poço e ourém —&gt; ONU ATTACHE —&gt; QUINQ (observar SLOT e PON)</li>
+</ul>
+<p>—&gt; se PON &gt;8 (inserir: QINQvlan_slotB)<br>
+—&gt; se PON &lt;8 (inserir: QINQvlan_slot)</p>
+<hr>
+<ul>
+<li>
+<p>USER DHCP SERVER PARAMETER  —&gt;  troca a faixa de dhcp (ex: 192.168.1.1)</p>
+</li>
+<li>
+<p>ONU DEAUTORIZATION  —&gt; desautoriza a ONU (fazer isso em trocas de endereço ou trocas de equipamento)</p>
+</li>
+<li>
+<p>ONU RESET —&gt; reinicia a ONU</p>
+</li>
+<li>
+<p>OPT MODULE —&gt; verifica o sinal ótico da ONU</p>
+</li>
+<li>
+<p>ONU LOCAL MANAGE —&gt; config ENABLE, ani ENABLE, web service 8021 ou 8080  (ativa acesso remoto http)</p>
+</li>
+</ul>
+<hr>
+<h3 id="onu-huawei">2 - ONU HUAWEI</h3>
+<hr>
+<h3 id="identificando-e-registrando-a-onu-1">Identificando e registrando a ONU</h3>
+<p>01	seleciona a OLT<br>
+02	obtain unautorized ONU —&gt; all<br>
+03	add to the ONU Authority List<br>
+04	As “physical ID”<br>
+05	current Row —&gt; create on device<br>
+06	current Row —&gt; Save to database<br>
+07	procura o serial da ONU autorizada<br>
+08	seleciona a ONU —&gt; Service config<br>
+09	Veip Data —&gt; add —&gt; 1<br>
+10	Cvid (adiciona  a VLAN do local)<br>
+11	Service type —&gt; data<br>
+12	Service profile —&gt; veip huawei<br>
+13	create on device<br>
+14	save to database</p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorecer ou desfavorecer rota</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="favorecendo-uma-rota-no-bgp">Favorecendo uma rota no BGP</h1>
+<p><strong>1)</strong> Para favorecer que o tráfego passe por uma rota em detrimento de outra:</p>
+<p>Ex: optaremos por favorecer o tráfego pela OI em detrimento da HALLEY</p>
+<p><strong>No BGP</strong></p>
+<p>primeiro faremos uma consulta das route-policy existentes na HALLEY</p>
+<pre><code>#display current-configuration | section include UOP-HALLEY | section exclude bgp
+</code></pre>
+<p><strong>2)</strong> Irá aparecer uma tela semelhante a esta, onde podem ser aferidos todas as route-policy ativas</p>
+<pre><code>#route-policy RP-UOP-HALLEY-V4-OUT permit node 12
+ if-match ip-prefix PL-AS_CLICKENTER-V4-ESP-153
+
+#route-policy RP-UOP-HALLEY-V4-OUT permit node 15
+ if-match community-filter CM-CLD-INTERCOM
+
+#route-policy RP-UOP-HALLEY-V4-OUT permit node 20
+ if-match community-filter CM-CLD-CHEKUP
+ apply as-path 265484 265484 265484 additive
+</code></pre>
+<p><strong>3)</strong> Para mudar o tráfego, nós adicionaremos novas regras de saída (OUT) inserindo o ASN da clickenter (265484) em cada node V4-OUT e V6-OUT, com isso adicionamos um peso sobre este destino retirando a preferência para a HALLEY.</p>
+<p><strong>No BGP</strong></p>
+<p>usaremos a linha <strong>apply as-path 265484 265484 265484 additive</strong></p>
+<pre><code>route-policy RP-UOP-HALLEY-V4-OUT permit node 15
+apply as-path 265484 265484 265484 additive
+
+route-policy RP-UOP-HALLEY-V4-OUT permit node 25
+apply as-path 265484 265484 265484 additive
+
+route-policy RP-UOP-HALLEY-V6-OUT permit node 15
+apply as-path 265484 265484 265484 additive
+
+route-policy RP-UOP-HALLEY-V6-OUT permit node 20
+apply as-path 265484 265484 265484 additive
+
+route-policy RP-UOP-HALLEY-V6-OUT permit node 25
+apply as-path 265484 265484 265484 additive
+</code></pre>
+<p><em>usamos o comando display para ver se está tudo ok e então confirmamos a alteração com o commit</em></p>
+<pre><code>disp configuration candidate
+
+commit
+</code></pre>
+<p><strong>4)</strong> Para favorecer a rota para a OI, basta utilizar do mesmo processo feito anteriormente, porém apagando o as-path criados nas regras de saída:</p>
+<p><strong>No BGP</strong></p>
+<p>usaremos o comando <strong>undo apply as-path</strong></p>
+<pre><code>route-policy RP-UOP-OI-V4-OUT permit node 20
+ if-match community-filter CM-CLD-CHEKUP
+undo apply as-path
+           
+route-policy RP-UOP-OI-V4-OUT permit node 25
+ if-match community-filter CM-CLD-NEVOLI
+undo apply as-path
+            
+route-policy RP-UOP-OI-V4-OUT permit node 35
+ if-match community-filter CM-CLD-LOONET
+undo apply as-path
+
+route-policy RP-UOP-OI-V6-OUT permit node 15
+ if-match community-filter CM-CLD-INTERCOM-V6
+ undo apply as-path
+           
+route-policy RP-UOP-OI-V6-OUT deny node 20
+ if-match community-filter CM-CLD-CHEKUP-V6
+ undo apply as-path
+</code></pre>
+<p><em>usamos o display para ver as alterações e, se estiver tudo certo, confirmarmos.</em></p>
+<pre><code>disp configuration candidate
+
+commit
+</code></pre>
+<p>após isso é só confirmar a mudança no tráfego observando pelo zabbix ou grafana o volume de dados diminuindo em um destino e aumentando em outro.</p>
+</div>
+</body>
+
+</html>

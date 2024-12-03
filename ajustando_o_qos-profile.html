@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="alterando-o-perfil--plano-de-um-cliente-link-dedicado">Alterando o Perfil / Plano de um cliente link dedicado</h1>
+<ol>
+<li>Entre no Ne40 BGP e pesquise pela interface lógica do cliente alvo.<br>
+EX: GL-NET (geidson)</li>
+</ol>
+<p>use o seguinte comando:</p>
+<pre><code>sys
+display interface description
+</code></pre>
+<ol start="2">
+<li>Identificada a interface, entre e verifique as configurações salvas</li>
+</ol>
+<p>irá retornar algo como:</p>
+<pre><code>sys
+interface 100GE0/3/2.703
+disp this
+
+ #vlan-type dot1q 703
+ description CLD-GEIDSON
+ ipv6 enable
+ ip address 172.18.2.197 255.255.255.252
+ ip address 172.18.2.209 255.255.255.252 sub
+ ipv6 address 2804:34D8:ABCD:703::1/126
+ statistic enable
+ qos-profile 250Mbps-Full inbound identifier none 
+ qos-profile 250Mbps-Full outbound identifier none 
+#
+return
+</code></pre>
+<ol start="3">
+<li>observe que o <strong>qos-profile</strong> está em 250Mbps-Full inbound e outbound. Supondo que o cliente irá contratar 1Gb, então iremos verificar se este perfil existe no Ne40:</li>
+</ol>
+<p>use o seguinte comando:</p>
+<pre><code>disp current-configuration | include qos-profile
+</code></pre>
+<p>*observando que na lista não há o plano de 1Gb, então iremos criar um, com os comandos:</p>
+<pre><code>qos-profile NomeDoPlano 
+car cir VelocidadeEmKbits inbound  
+car cir VelocidadeEmKbits outbound
+</code></pre>
+<p>exemplo:</p>
+<pre><code>qos-profile 1000Mbps-Full  
+car cir 100000000 inbound  
+car cir 100000000 outbound
+commit
+</code></pre>
+<p>vale lembrar que:</p>
+<p>1mb = 1.000kb<br>
+100mb = 100.000kb<br>
+1gb = 1.000.000kb</p>
+<ol start="4">
+<li>Criado o perfil, basta retornar para a interface do cliente e usar o comando undo para limpar o qos salvo e adicionar o novo perfil qos.</li>
+</ol>
+<p>veja abaixo:</p>
+<pre><code>undo qos-profile inbound
+undo qos-profile outbound
+commit
+qos-profile 1000mbps-full inbound
+qos-profile 1000mbps-full outbound
+commit
+</code></pre>
+</div>
+</body>
+
+</html>

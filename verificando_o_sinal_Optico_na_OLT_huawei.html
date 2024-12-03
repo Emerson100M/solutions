@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>verificando o sinal óptico na OLT huawei</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="verificando-o-sinal-óptico-na-olt-huawei">Verificando o Sinal óptico na OLT huawei</h1>
+<p><strong>1)</strong> Para ver o sinal recebido e transmitido por todos os dispositivos em um pon específico usamos os comandos:</p>
+<p>**#display ont info summary PON **</p>
+<p>ex: para ver o status da conexão dos clientes da olt de capanema no SLOT 1 PON 15</p>
+<p><strong>Na OLT</strong></p>
+<pre><code>#enable
+#config
+#interface gpon 0/1
+#display ont info summary 15
+</code></pre>
+<p><strong>2)</strong> Irá aparecer uma tela semelhante a esta, onde podem ser aferidos se o dispositivo está online ou não, qual o sinal óptico recebido, qual foi a causa da última desconexão e o tempo em que está offline</p>
+<pre><code> Command:
+          display ont info summary 15
+  Command is being executed. Please wait
+  ------------------------------------------------------------------------------
+  In port 0/1/15, the total of ONTs are: 8, online: 6
+  ------------------------------------------------------------------------------
+  ONT  Run     Last                Last                Last                   
+  ID   State   UpTime              DownTime            DownCause
+  ------------------------------------------------------------------------------
+  0    online  15-04-2024 18:18:13 15-04-2024 17:55:36 dying-gasp               
+  1    online  11-04-2024 13:44:41 11-04-2024 13:41:58 dying-gasp               
+  2    online  11-04-2024 23:58:59 11-04-2024 23:58:05 dying-gasp               
+  3    offline -                   -                   -                        
+  4    online  11-04-2024 13:44:40 11-04-2024 13:41:57 dying-gasp               
+  5    offline -                   -                   -                        
+  7    online  11-04-2024 13:44:35 11-04-2024 13:41:57 dying-gasp               
+  9    online  15-04-2024 18:16:54 15-04-2024 17:55:36 dying-gasp               
+  ------------------------------------------------------------------------------
+  ONT        SN        Type          Distance Rx/Tx power  Description
+  ID                                    (m)      (dBm)
+  ------------------------------------------------------------------------------
+  0   48575443CCB443A6 EG8145X6         1198  -23.76/2.26  natanael.oliveira    
+  1   48575443F15C04A6 EG8145X6         1904  -16.57/2.27  escritorio.parque    
+  2   48575443ADA7EAA7 EG8145X6         1895  -16.38/2.29  restaurante2.parque  
+  3   48575443F156B1A6 -                -     -/-          vaquejada_show       
+  4   4857544333BDEAAC EG8145X6-10      2109  -16.55/2.36  portaria.parque      
+  5   48575443F15861A6 -                -     -/-          vaquejada_onibus     
+  7   48575443F15BC3A6 EG8145X6         1968  -17.85/2.27  restaurante.parque   
+  9   485754430C7CDAAD EG8145X6-10      1510  -22.22/2.25  kayllane.oliveira    
+  ------------------------------------------------------------------------------
+</code></pre>
+<p><strong>3)</strong> Para ver o sinal ótico transmitido e recebido pela OLT em cada placa gpon, usamos o seguinte comando: <strong>display ont optical-info</strong></p>
+<p><strong>Na OLT</strong></p>
+<p>ex: para ver o sinal RX/TX no slot 1 pon 8 da olt</p>
+<pre><code>enable
+config
+interface gpon 0/1
+display ont optical-info 8 all
+</code></pre>
+<p>irá exibir a seguinte tela:</p>
+<pre><code> Command:
+          display ont optical-info 8 all
+  -----------------------------------------------------------------------------
+  ONT  Rx power  Tx power  OLT Rx ONT  Temperature  Voltage  Current  Distance
+  ID   (dBm)     (dBm)     power(dBm)  (C)          (V)      (mA)     (m)
+  -----------------------------------------------------------------------------
+    0  -22.22    2.31      -25.09      48           3.320    5        4909    
+    1  -25.53    2.29      -30.00      47           3.300    11       5053    
+    2  -21.25    2.35      -23.77      49           3.300    5        5022    
+    3  -19.35    1.95      -24.95      44           3.280    7        5198    
+    4  -20.36    2.18      -24.56      49           3.320    5        5211    
+    5  -25.53    2.20      -30.00      48           3.320    8        4961    
+    6  -21.87    2.33      -25.86      44           3.320    5        5343    
+    7  -20.97    2.34      -24.32      48           3.360    6        5359    
+    8  -20.45    2.25      -24.32      41           3.260    5        4436    
+    9  -20.97    2.19      -25.86      45           3.360    7        5003    
+   10  -20.36    1.98      -24.09      45           3.340    6        5094    
+   11  -19.62    2.29      -23.77      44           3.320    8        4580    
+   12  -23.66    2.23      -27.22      49           3.320    8        4761    
+   13  -20.75    2.32      -25.09      44           3.260    6        4794    
+   14  -20.04    2.05      -23.88      45           3.280    6        4950    
+   15  -20.75    2.30      -24.69      43           3.340    6        4820    
+  -----------------------------------------------------------------------------
+</code></pre>
+<p><strong>4)</strong> Para ver os dados do gbic na OLT em cada placa gpon, usamos o seguinte comando: <strong>display port state</strong></p>
+<p><strong>Na OLT</strong></p>
+<p>ex: para ver as informações do gbic no slot 1 pon 8 da olt</p>
+<pre><code>enable
+config
+interface gpon 0/1
+display port state 8
+</code></pre>
+<p>irá exibir a seguinte tela:</p>
+<pre><code> ----------------------------------------------------------------------------
+  Optical Module State
+ ----------------------------------------------------------------------------
+  Optical Module status        Online
+  Laser state                  Normal
+  TX fault                     Normal
+  Temperature(C)               39
+  TX Bias current(mA)          36
+  Supply Voltage(V)            3.27
+  TX power(dBm)                5.08  
+  Over-Temperature Close       -     
+  Work mode                    Standard
+ ----------------------------------------------------------------------------
+    Optical Module Static Information  
+ ----------------------------------------------------------------------------
+  Module type                  GPON  
+  Module sub-type              CLASS C+
+  Used type                    OLT   
+  Encapsulation Type           SFP   
+  SFF-8472 Compliance          Includes functionality described in Rev 9.5
+  Max Distance(Km)             60    
+  Max rate(Kbps)               2500000
+  Rate Identifier              Unspecified(0x0)
+  Wave length(nm)              1490  
+  Fiber type                   Single Mode
+  Identifier                   SFP or SFP Plus
+  Ext.Identifier               GBIC/SFP function is defined by two-wire
+                               interface ID only
+  Connector                    SC    
+ ----------------------------------------------------------------------------
+</code></pre>
+</div>
+</body>
+
+</html>
